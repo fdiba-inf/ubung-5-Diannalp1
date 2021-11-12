@@ -1,5 +1,6 @@
 package exercise5;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Search {
@@ -7,21 +8,23 @@ public class Search {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter number count: ");
-        int numberCount = input.nextInt();
-
-        int[] numbers = new int[numberCount];
+        int size = input.nextInt();
+        int arr[] = new int[size];
 
         System.out.println("Enter numbers: ");
-        for (int index = 0; index < numbers.length; index++) {
-            numbers[index] = input.nextInt();
+        for(int i = 0; i < size; i++) {
+          arr[i] = input.nextInt();
         }
-
         System.out.print("Search for number: ");
-        int number = input.nextInt();
+        int search = input.nextInt();
+        int index = -1;
 
-        int numberIndex = -1;
-        // Search for number in numbers
-
-        System.out.println("Number index: " + numberIndex);
+        for (int i = 0; i < size; i++) {
+          if (arr[i] == search) {
+            index = i;
+            break;
+          }
+        }
+        System.out.println("Number index: " + index);
     }
 }
